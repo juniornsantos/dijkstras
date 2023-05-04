@@ -1,4 +1,4 @@
 <div align="center">
-    <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
-    <img src="https://forthebadge.com/images/badges/built-by-developers.svg" />
+    <img src="https://forthebadge.com/images/badges/powered-by-coffee.svg" />
+    <img src="https://forthebadge.com/images/badges/no-ragrets.svg" />
 </div>
