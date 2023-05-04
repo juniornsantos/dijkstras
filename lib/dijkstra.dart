@@ -9,8 +9,40 @@ void main() {
     {'x': 0.383248, 'y': 0.232273, 'z': 0.0}
   ];
 
-  // var calcularmetros = calculateDistance(x2: x2, x1: x1, y2: y2, y1: y1);
+  // lista com nos
+  List<dynamic> graphPoints = [
+    {
+      {'x': 0.383248, 'y': 0.232273, 'z': 0.0},
+      {'x': 0.383248, 'y': 1.23227, 'z': 0.0}
+    },
+    {
+      {'x': 0.383248, 'y': 0.232273, 'z': 0.0},
+      {'x': 1.38325, 'y': 0.232273, 'z': 0.0}
+    },
+    {
+      {'x': 1.38325, 'y': 0.232273, 'z': 0.0},
+      {'x': 1.41474, 'y': 1.62136, 'z': 0.0}
+    },
+    {
+      {'x': 1.41474, 'y': 1.23227, 'z': 0.0},
+      {'x': 0.383248, 'y': 1.23227, 'z': 0.0}
+    },
+    {
+      {'x': 0.383248, 'y': 1.62136, 'z': 0.0},
+      {'x': 0.744272, 'y': 0.795737, 'z': 0.0}
+    },
+    {
+      {'x': 0.744272, 'y': 0.795737, 'z': 0.0},
+      {'x': 1.41474, 'y': 1.62136, 'z': 0.0}
+    },
+    {
+      {'x': 0.744272, 'y': 0.795737, 'z': 0.0},
+      {'x': 0.383248, 'y': 0.232273, 'z': 0.0}
+    },
+  ];
 
+  var item1 = graphPoints.length;
+  print(item1);
   var distancia = calculateDistance(
     x2: endPoint[0]['x'],
     x1: startPoint[0]['x'],
@@ -19,22 +51,7 @@ void main() {
   );
   print('a distancia entre os pontos é: ${distancia.toStringAsFixed(4)}');
 
-  List<dynamic> pathPoints = [
-    {'x': 0.383248, 'y': 1.23227, 'z': 0.0},
-    {'x': 0.383248, 'y': 0.232273, 'z': 0.0},
-    {'x': 1.38325, 'y': 0.232273, 'z': 0.0},
-    {'x': 1.41474, 'y': 1.62136, 'z': 0.0},
-    {'x': 0.744272, 'y': 0.795737, 'z': 0.0},
-    {'x': 0.0, 'y': 1.0, 'z': 0.0},
-    {'x': 0.0, 'y': 0.0, 'z': 0.0},
-    {'x': 1.0, 'y': 0.0, 'z': 0.0},
-    {'x': 1.03149, 'y': 1.38909, 'z': 0.0},
-    {'x': 1.0, 'y': 1.0, 'z': 0.0}
-  ];
-
-  // final pontosDistancia = [];
-
-  // for (var i = 0; i < pathPoints.length - 1; i++) {
+  // for (var i = 0; i < graphPoints.length; i++) {
   //   var distancias = calculateDistance(
   //     x2: pathPoints[i]['x'],
   //     x1: pathPoints[i + 1]['x'],
@@ -46,14 +63,6 @@ void main() {
   //   print(pontosDistancia);
   //   // print(pathPoints[i]);
   // }
-
-  // var points = dijkstra(
-  //     pontoinicial: startPoint,
-  //     pontofinal: endPoint,
-  //     pontostotais: pathPoints,
-  //     pontosedistancia: null);
-  // ------------------------------ //
-  // print('Os pontos são: ${distancia.toStringAsFixed(4)}');
 }
 
 List dijkstra({
@@ -70,3 +79,11 @@ double calculateDistance({required x2, required x1, required y2, required y1}) {
   final d = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
   return d;
 }
+
+// var points = dijkstra(
+  //     pontoinicial: startPoint,
+  //     pontofinal: endPoint,
+  //     pontostotais: pathPoints,
+  //     pontosedistancia: null);
+  // ------------------------------ //
+  // print('Os pontos são: ${distancia.toStringAsFixed(4)}');
