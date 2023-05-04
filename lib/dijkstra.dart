@@ -10,7 +10,7 @@ void main() {
   ];
 
   // lista com nos
-  List<dynamic> graphPoints = [
+  List<Set<Map<String, double>>> graphPointsX = [
     {
       {'x': 0.383248, 'y': 0.232273, 'z': 0.0},
       {'x': 0.383248, 'y': 1.23227, 'z': 0.0}
@@ -41,15 +41,28 @@ void main() {
     },
   ];
 
-  var item1 = graphPoints.length;
-  print(item1);
-  var distancia = calculateDistance(
-    x2: endPoint[0]['x'],
-    x1: startPoint[0]['x'],
-    y2: endPoint[0]['y'],
-    y1: startPoint[0]['y'],
-  );
-  print('a distancia entre os pontos é: ${distancia.toStringAsFixed(4)}');
+  // final itemX = graphPointsX[0][]['x'];
+  List<double> xValues = [];
+
+  for (Set<Map<String, double>> points in graphPointsX) {
+    for (Map<String, double> point in points) {
+      if (point.containsKey('x')) {
+        xValues.add(point['x']!);
+      }
+    }
+  }
+
+  print('Valores: $xValues');
+
+  // print('Valor: $itemX');
+
+  // var distancia = calculateDistance(
+  //   x2: endPoint[0]['x'],
+  //   x1: startPoint[0]['x'],
+  //   y2: endPoint[0]['y'],
+  //   y1: startPoint[0]['y'],
+  // );
+  // print('a distancia entre os pontos é: ${distancia.toStringAsFixed(4)}');
 
   // for (var i = 0; i < graphPoints.length; i++) {
   //   var distancias = calculateDistance(
@@ -81,9 +94,12 @@ double calculateDistance({required x2, required x1, required y2, required y1}) {
 }
 
 // var points = dijkstra(
-  //     pontoinicial: startPoint,
-  //     pontofinal: endPoint,
-  //     pontostotais: pathPoints,
-  //     pontosedistancia: null);
-  // ------------------------------ //
-  // print('Os pontos são: ${distancia.toStringAsFixed(4)}');
+//     pontoinicial: startPoint,
+//     pontofinal: endPoint,
+//     pontostotais: pathPoints,
+//     pontosedistancia: null);
+// ------------------------------ //
+// print('Os pontos são: ${distancia.toStringAsFixed(4)}');
+
+
+
