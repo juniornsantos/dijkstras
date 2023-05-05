@@ -41,7 +41,6 @@ void main() {
     },
   ];
 
-  // final itemX = graphPointsX[0][]['x'];
   List<double> xValues = [];
 
   for (Set<Map<String, double>> points in graphPointsX) {
@@ -52,7 +51,7 @@ void main() {
     }
   }
 
-  print('Valores: $xValues');
+  // final xValues = graphPointsX.expand((i) => i).toList();
 
   // print('Valor: $itemX');
 
